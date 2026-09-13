@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lvara SocialMedia BOOST - Automate & Scale Your Social Media</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #8b5cf6;
+            --primary-light: #f3e8ff;
+            --accent-pink: #ec4899;
+            --bg-color: #fcfbfe;
+            --text-main: #111827;
+            --text-muted: #6b7280;
+            --border-color: #e5e7eb;
+            --white: #ffffff;
+            --success: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            background-image: 
+                linear-gradient(to right, rgba(229, 231, 235, 0.4) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(229, 231, 235, 0.4) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
+            color: var(--white);
+            padding: 6px 10px;
+            border-radius: 8px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.4rem;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        .btn-primary {
+            background: var(--text-main);
+            color: var(--white);
+            padding: 10px 22px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.25);
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(139, 92, 246, 0.35);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            max-width: 850px;
+            margin: 50px auto 40px;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            line-height: 1.15;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Glow effect behind hero mockup */
+        .hero-glow {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(236, 72, 153, 0.1) 50%, transparent 70%);
+            z-index: -1;
+            filter: blur(40px);
+        }
+
+        /* Dashboard Preview Mockup */
+        .mockup-container {
+            max-width: 1050px;
+            margin: 0 auto 90px;
+            padding: 0 20px;
+        }
+
+        .mockup-box {
+            background: var(--white);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+            padding: 24px;
+            overflow: hidden;
+        }
+
+        .mockup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+        }
+
+        .mockup-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .mockup-dots span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #e5e7eb;
+        }
+        .mockup-dots span:nth-child(1) { background: #ef4444; }
+        .mockup-dots span:nth-child(2) { background: #f59e0b; }
+        .mockup-dots span:nth-child(3) { background: #10b981; }
+
+        .mockup-body {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            text-align: left;
+        }
+
+        .mockup-card-item {
+            background: #f9fafb;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid #f3f4f6;
+        }
+
+        .mockup-card-item h4 {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .mockup-card-item .stat {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        /* General Section Layout */
+        section {
+            max-width: 1100px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* 3-Step Setup Section */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 35px 30px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+            border-color: var(--primary);
+        }
+
+        .card i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 14px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Split Feature Highlight Box */
+        .split-box {
+            background: linear-gradient(135deg, #fff5f8 0%, #faf5ff 100%);
+            border: 1px solid #fce7f3;
+            border-radius: 24px;
+            padding: 50px 40px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .split-content h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .split-content p {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        .checklist-items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .checklist-item i {
+            color: var(--success);
+            background: #d1fae5;
+            padding: 6px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+        }
+
+        .split-visual {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .schedule-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        .schedule-row:last-child {
+            border-bottom: none;
+        }
+
+        .tag-active {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Portfolio / Featured Brands Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .portfolio-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 24px;
+            transition: all 0.2s;
+        }
+
+        .portfolio-card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transform: translateY(-3px);
+        }
+
+        .portfolio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .portfolio-header h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .rating {
+            color: #f59e0b;
+            font-size: 0.85rem;
+        }
+
+        .portfolio-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        /* Pricing Section (3 Packages: Easy, Normal, Hard) */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px 30px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .pricing-card.popular {
+            border: 2px solid var(--primary);
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.12);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .pricing-card > p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            min-height: 40px;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 20px 0;
+            color: var(--text-main);
+        }
+
+        .price span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: normal;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 20px 0 30px 0;
+            border-top: 1px solid var(--border-color);
+            padding-top: 25px;
+            flex-grow: 1;
+        }
+
+        .pricing-features li {
+            margin-bottom: 14px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pricing-features li i {
+            color: var(--success);
+            font-size: 1rem;
+        }
+
+        /* FAQ Section Accordion */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        .faq-question {
+            padding: 20px 24px;
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+            color: var(--text-muted);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 24px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 24px 20px 24px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+
+        /* Interactive Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(17, 24, 39, 0.6);
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-box {
+            background: var(--white);
+            width: 90%;
+            max-width: 450px;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            text-align: center;
+            position: relative;
+        }
+
+        .modal-overlay.active .modal-box {
+            transform: scale(1);
+        }
+
+        .modal-box i.close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+
+        .modal-box i.close-btn:hover {
+            color: var(--text-main);
+        }
+
+        .modal-icon {
+            font-size: 3rem;
+            color: var(--success);
+            margin-bottom: 20px;
+        }
+
+        .modal-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .modal-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--white);
+            border-top: 1px solid var(--border-color);
+            padding: 60px 20px 30px;
+            margin-top: 100px;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 0 auto;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                padding: 20px;
+                border-bottom: 1px solid var(--border-color);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            }
+            nav ul.show {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            .split-box {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+            .mockup-body {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span>L</span> Lvara SocialMedia BOOST
+            </a>
+            <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="navLinks">
+                    <li><a href="#features">Keunggulan</a></li>
+                    <li><a href="#packages">Paket Layanan</a></li>
+                    <li><a href="#portfolio">Portofolio Klien</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#packages" class="btn-primary" style="color: white; padding: 8px 18px;">Mulai Sekarang</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-glow"></div>
+        <div class="badge">
+            <i class="fa-solid fa-sparkles"></i> Solusi Naik Level Social Media Bisnis Anda
+        </div>
+        <h1>Automate & scale your brand with <span>Lvara BOOST</span></h1>
+        <p>Tingkatkan engagement, jangkau audiens tertarget, dan ubah followers menjadi pembeli setia bersama tim profesional kami.</p>
+        <a href="#packages" class="btn-gradient">Pilih Paket Layanan</a>
+    </section>
+
+    <div class="mockup-container">
+        <div class="mockup-box">
+            <div class="mockup-header">
+                <div class="mockup-dots">
+                    <span></span><span></span><span></span>
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 500;">Live Analytics Dashboard</div>
+            </div>
+            <div class="mockup-body">
+                <div class="mockup-card-item">
+                    <h4>Total Impressions</h4>
+                    <div class="stat">+284.5K <span style="font-size: 0.75rem; color: var(--success);">↑ 34%</span></div>
+                </div>
+                <div class="mockup-card-item">
+                    <h4>Engagement Rate</h4>
+                    <div class="stat">8.4% <span style="font-size: 0.75rem; color: var(--success);">↑ 2.1%</span></div>
+                </div>
+                <div class="mockup-card-item">
+                    <h4>New Followers</h4>
+                    <div class="stat">12.8K <span style="font-size: 0.75rem; color: var(--success);">Active</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="features">
+        <div class="section-title">
+            <h2>From setup to first viral post in minutes</h2>
+            <p>Strategi teruji untuk mendominasi beranda dan algoritma social media.</p>
+        </div>
+        <div class="grid-3">
+            <div class="card">
+                <i class="fa-solid fa-bullseye"></i>
+                <h3>Target Audiens Tepat</h3>
+                <p>Analisis demografi mendalam agar konten Anda dilihat oleh calon pembeli yang benar-benar potensial.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <h3>Konten Kreatif & Konsisten</h3>
+                <p>Visual estetik dan copywriting interaktif yang dirancang khusus untuk meningkatkan brand awareness.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-rocket"></i>
+                <h3>Pertumbuhan Organik</h3>
+                <p>Strategi optimasi hashtag, algoritma, dan interaksi real-time tanpa trik instan yang berbahaya.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="split-box">
+            <div class="split-content">
+                <h3>Zero conflicted scheduling, period.</h3>
+                <p>Kelola seluruh jadwal posting lintas platform dengan kalender terintegrasi yang memastikan konten Anda tayang di waktu prime-time audiens.</p>
+                <div class="checklist-items">
+                    <div class="checklist-item"><i class="fa-solid fa-check"></i> Auto-scheduling & multi-platform sync</div>
+                    <div class="checklist-item"><i class="fa-solid fa-check"></i> Real-time performance tracking</div>
+                    <div class="checklist-item"><i class="fa-solid fa-check"></i> Dedicated creative support team</div>
+                </div>
+            </div>
+            <div class="split-visual">
+                <div class="schedule-row">
+                    <span>Instagram Feeds (3 post/wk)</span>
+                    <span class="tag-active">Optimized</span>
+                </div>
+                <div class="schedule-row">
+                    <span>TikTok / Reels (Daily)</span>
+                    <span class="tag-active">Scheduled</span>
+                </div>
+                <div class="schedule-row">
+                    <span>Community Engagement</span>
+                    <span class="tag-active">Active 24/7</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="section-title">
+            <h2>Featured brands growing with us</h2>
+            <p>Kisah sukses dari berbagai brand yang telah mendominasi pasar digital bersama Lvara.</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="portfolio-header">
+                    <h4>Kopi Senja Nusantara</h4>
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <p>"Engagement Instagram kami naik 400% dalam 2 bulan pertama menggunakan Paket Normal."</p>
+                <span style="font-size: 0.8rem; color: var(--primary); font-weight: 600;">Food & Beverage</span>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-header">
+                    <h4>Glenda Skincare Official</h4>
+                    <div class="rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                </div>
+                <p>"Penjualan TikTok Shop meningkat drastis berkat konsistensi video pendek dan riset trend yang akurat."</p>
+                <span style="font-size: 0.8rem; color: var(--primary); font-weight: 600;">Beauty & Wellness</span>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-header">
+                    <h4>TechNova Gadget Store</h4>
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <p>"Paket Hard memberikan manajemen full team yang sangat membantu efisiensi operasional marketing kami."</p>
+                <span style="font-size: 0.8rem; color: var(--primary); font-weight: 600;">Gadget & Retail</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="packages">
+        <div class="section-title">
+            <h2>Simple, transparent pricing for every brand</h2>
+            <p>Pilih tingkat intensitas penanganan social media yang pas untuk bisnis Anda.</p>
+        </div>
+        <div class="pricing-grid">
+            <!-- Package 1: Easy -->
+            <div class="pricing-card">
+                <div>
+                    <h3>Package Easy</h3>
+                    <p>Cocok untuk pebisnis pemula yang ingin merapikan tampilan akun dasar.</p>
+                    <div class="price">Rp 750k<span>/bulan</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Audit profil & bio optimization</li>
+                        <li><i class="fa-solid fa-check"></i> 12 Feeds kreatif per bulan</li>
+                        <li><i class="fa-solid fa-check"></i> Riset hashtag dasar</li>
+                        <li><i class="fa-solid fa-check"></i> Laporan performa bulanan</li>
+                    </ul>
+                </div>
+                <button class="btn-primary select-package-btn" data-package="Package Easy (Rp 750k/bulan)" style="width: 100%; text-align:center;">Pilih Easy</button>
+            </div>
+
+            <!-- Package 2: Normal (Most Popular) -->
+            <div class="pricing-card popular">
+                <div class="popular-badge">Paling Populer</div>
+                <div>
+                    <h3>Package Normal</h3>
+                    <p>Ideal untuk bisnis berkembang yang butuh pertumbuhan aktif & konsisten.</p>
+                    <div class="price">Rp 1.9jt<span>/bulan</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Semua fitur Paket Easy</li>
+                        <li><i class="fa-solid fa-check"></i> 20 Feeds & 8 Reels/TikTok</li>
+                        <li><i class="fa-solid fa-check"></i> Content planner & copywriting</li>
+                        <li><i class="fa-solid fa-check"></i> Optimasi interaksi & balas komentar</li>
+                        <li><i class="fa-solid fa-check"></i> Konsultasi strategi 2x/bulan</li>
+                    </ul>
+                </div>
+                <button class="btn-gradient select-package-btn" data-package="Package Normal (Rp 1.9jt/bulan)" style="width: 100%; text-align:center;">Pilih Normal</button>
+            </div>
+
+            <!-- Package 3: Hard -->
+            <div class="pricing-card">
+                <div>
+                    <h3>Package Hard</h3>
+                    <p>Solusi total bagi brand yang ingin mendominasi pasar & scale-up agresif.</p>
+                    <div class="price">Rp 4.5jt<span>/bulan</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Full management 3 platform sekaligus</li>
+                        <li><i class="fa-solid fa-check"></i> Unlimited feeds & video pendek harian</li>
+                        <li><i class="fa-solid fa-check"></i> Setup & optimasi Paid Ads (Ads setup)</li>
+                        <li><i class="fa-solid fa-check"></i> Dedicated account manager 24/7</li>
+                        <li><i class="fa-solid fa-check"></i> Analisis kompetitor mendalam</li>
+                    </ul>
+                </div>
+                <button class="btn-primary select-package-btn" data-package="Package Hard (Rp 4.5jt/bulan)" style="width: 100%; text-align:center;">Pilih Hard</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="section-title">
+            <h2>Frequently asked questions</h2>
+            <p>Temukan jawaban atas pertanyaan seputar layanan manajemen sosial media kami.</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Bagaimana cara kerja awal setelah saya memilih paket?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Setelah memilih paket dan konfirmasi via WhatsApp, tim kami akan mengirimkan brief singkat, melakukan audit akun, dan menyusun content planner dalam 2x24 jam.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Apakah saya punya hak untuk revisi desain konten?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Tentu! Setiap batch konten akan dikirimkan kepada Anda untuk dicek dan direvisi terlebih dahulu sebelum dipublikasikan ke akun sosial media Anda.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Apakah ada kontrak jangka panjang yang mengikat?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Tidak ada. Layanan kami menggunakan sistem berlangganan bulanan tanpa kontrak mengikat, sehingga Anda dapat berhenti atau upgrade kapan saja.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 15px;">
+                    <span>L</span> Lvara SocialMedia BOOST
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Mitra terpercaya untuk kesuksesan digital brand Anda.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="#features">Keunggulan</a></li>
+                    <li><a href="#packages">Paket Layanan</a></li>
+                    <li><a href="#portfolio">Portofolio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Hubungi Kami</h4>
+                <ul>
+                    <li><a href="https://wa.me/6287767681052" target="_blank">WhatsApp: +62 877-6768-1052</a></li>
+                    <li><a href="mailto:halo@lvarasocialboost.com">Email: halo@lvarasocialboost.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Lvara SocialMedia BOOST. All rights reserved.
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="packageModal">
+        <div class="modal-box">
+            <i class="fa-solid fa-xmark close-btn" id="closeModal"></i>
+            <div class="modal-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3>Paket Dipilih!</h3>
+            <p id="modalPackageText">Anda telah memilih paket layanan.</p>
+            <a href="https://wa.me/6287767681052?text=Halo%20Lvara%20SocialMedia%20BOOST,%20saya%20tertarik%20untuk%20memesan%20layanan" target="_blank" class="btn-gradient" style="display:block; text-align:center;">Lanjutkan via WhatsApp</a>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle Logic
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+            const icon = menuToggle.querySelector('i');
+            if (navLinks.classList.contains('show')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#navLinks a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('show');
+                menuToggle.querySelector('i').classList.remove('fa-xmark');
+                menuToggle.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Package Selection Modal Logic
+        const modal = document.getElementById('packageModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalPackageText = document.getElementById('modalPackageText');
+        const selectButtons = document.querySelectorAll('.select-package-btn');
+
+        selectButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const packageName = button.getAttribute('data-package');
+                modalPackageText.textContent = `Anda telah memilih ${packageName}. Silakan lanjut untuk konfirmasi pemesanan.`;
+                modal.classList.add('active');
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+        // FAQ Accordion Logic
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const currentlyActive = document.querySelector('.faq-item.active');
+                if (currentlyActive && currentlyActive !== item) {
+                    currentlyActive.classList.remove('active');
+                }
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
